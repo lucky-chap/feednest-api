@@ -8,10 +8,7 @@ import {
 import { feedbackCollectionName, modelName } from "../utils";
 import { AnalyseSentimentResponse, SummaryResponse } from "../types";
 
-export function analyseSentiment(
-  text: string,
-  projectId: string,
-): AnalyseSentimentResponse {
+export function analyseSentiment(text: string): AnalyseSentimentResponse {
   const model = models.getModel<OpenAIChatModel>(modelName);
   const input = model.createInput([
     new SystemMessage("You are a great feedback sentiment analysis agent."),
@@ -42,18 +39,8 @@ export function analyseSentiment(
   messageInput.temperature = 0.7;
   const messageOutput = model.invoke(messageInput);
 
-  // embed feedback into collection, using the projectId as namespace for easy retrieval
-  const feedbackCollectionMutationResult = collections.upsert(
-    feedbackCollectionName,
-    null,
-    text,
-    [], // labels
-    projectId, // namespace
-  );
-
   return {
     message: messageOutput.choices[0].message.content.trim(),
     sentiment,
-    feedbackCollectionMutationResult: feedbackCollectionMutationResult,
   };
 }

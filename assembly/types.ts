@@ -10,11 +10,6 @@ export class AnalyseSentimentResponse {
 
   @alias("message")
   message!: string;
-
-
-  @alias("feedbackCollectionMutationResult")
-  feedbackCollectionMutationResult: collections.CollectionMutationResult | null =
-    null;
 }
 
 
@@ -27,4 +22,13 @@ export class SummaryResponse {
 
   @alias("suggestions")
   suggestions!: string;
+}
+
+
+@json
+export class EmbedFeedbackResponse {
+
+  @alias("feedbackCollectionMutationResult")
+  feedbackCollectionMutationResult: collections.CollectionMutationResult | null =
+    null;
 }
