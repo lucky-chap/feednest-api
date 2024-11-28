@@ -1,4 +1,7 @@
 export const modelName = "meta-llama-instruct-3-1-8B";
+export const embeddingModelName = "minilm";
+export const classificationModelName = "roberta-base";
+export const feedbackCollectionName = "feedback";
 
 export const demoFeedback = [
   "The interface is really intuitive and easy to use!",

@@ -1,3 +1,5 @@
+import { collections } from "@hypermode/modus-sdk-as";
+
 
 @json
 export class AnalyseSentimentResponse {
@@ -8,6 +10,11 @@ export class AnalyseSentimentResponse {
 
   @alias("message")
   message!: string;
+
+
+  @alias("feedbackCollectionMutationResult")
+  feedbackCollectionMutationResult: collections.CollectionMutationResult | null =
+    null;
 }
 
 
