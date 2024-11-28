@@ -9,3 +9,15 @@ export class AnalyseSentimentResponse {
   @alias("message")
   message!: string;
 }
+
+
+@json
+export class SummaryResponse {
+
+  @alias("summary")
+  summary!: string;
+
+
+  @alias("suggestions")
+  suggestions!: string;
+}
