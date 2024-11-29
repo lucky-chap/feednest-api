@@ -13,7 +13,7 @@ export function summariseFeedback(feedback: string[]): SummaryResponse {
   const input = model.createInput([
     new SystemMessage("You are a great feedback summarisation agent."),
     new UserMessage(
-      `Summarise the following feedback: "${feedback}" in less than 100 words. Do not add your own context, comment or an explanation,
+      `Summarise the following feedbacks: "${feedback}" in less than 100 words. Do not add your own context, comment or an explanation,
         return a summary in less than 100 words. Just return a string less than 100 words, no weird formatting`,
     ),
   ]);
