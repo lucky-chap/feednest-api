@@ -27,7 +27,7 @@ export function summariseFeedback(feedback: string[]): SummaryResponse {
   const suggestionsInput = model.createInput([
     new SystemMessage("You are a great feedback suggestions agent."),
     new UserMessage(
-      `Based on this summary: "${summary}", generate a smart suggestions on how to improve the product
+      `Based on this summary: "${summary}", generate smart suggestions on how to improve the product
         based on the summary in less than 100 words. Be elaborate and detailed. Do not add your own context, comment or an explanation,
         Return smart suggestions in less than 100 words. Just return the suggestions in string less than 100 words, no weird formatting.`,
     ),
